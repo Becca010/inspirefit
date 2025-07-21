@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InspireFit - Scheduler Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>📆 InspireFit Scheduler Pro</h1>
+
+    <div class="toggle-wrapper">
+      <label class="switch">
+        <input type="checkbox" onclick="toggleDarkMode()">
+        <span class="slider round"></span>
+      </label>
+      <span>🌙 Dark Mode</span>
+    </div>
+
+    <label for="goal">🎯 Select Your Goal:</label>
+    <select id="goal" onchange="loadSmartPlan()">
+      <option value="none">-- Choose a goal --</option>
+      <option value="strength">Build Strength</option>
+      <option value="fatburn">Lose Fat</option>
+      <option value="core">Improve Core</option>
+    </select>
+
+    <h3>📅 Weekly Planner</h3>
+    <div class="calendar" id="calendar">
+      <!-- dynamically generated tiles -->
+    </div>
+
+    <button onclick="exportPlan()">📤 Export Weekly Plan</button>
+    <pre id="output"></pre>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
